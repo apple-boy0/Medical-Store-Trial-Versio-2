@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rocky Bhai Medical Store</title>
+  <link rel="stylesheet" href="Store Style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div id="developer-alert" class="modern-alert">
+    <div class="alert-content">
+      <h3>Message from Developer</h3>
+      <p>The website is currently under development. If you find any error or mistake, feel free to reach us by telling in forms in "Order Now" tab. Just submit your message!</p>
+      <button class="close-alert-btn">&times;</button>
+    </div>
+  </div>
+  <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo-link">
+        <img src="Daco_4306300.png" alt="Medical Store Logo" class="logo-img">
+      </a>
+      <h1 class="header-title">
+         <a href="index.html" class="title-link">Rocky Bhai Medical Store</a>
+       </h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="medicine-list.html">Price List</a></li>
+        <li><a href="order-now.html">Order Now</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-background-slides">
+      <div class="hero-slide active" style="background-image: url('medicine-8287535_1280.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('pills-png-33158.png');"></div>
+      <div class="hero-slide" style="background-image: url('pexels-pixabay-159211.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('premium_photo-1672163163579-e5d4aedd26af.jpg');"></div>
+    </div>
+    <div class="quote-box">
+      <img src="Screenshot 2025-06-09 165143.png" alt="Mr. Rocky Bhau" class="owner-photo">
+      <div class="quote-text">
+        <p>Laughing is the best medicine!</p>
+        <span>- Mr. Rocky Bhau</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="machine-showcase reveal">
+    <h2>Innovations in Medicine Production</h2>
+    <div class="machine-slideshow-container">
+      <div class="machine-slide active">
+        <img src="tabletpress.jpg" alt="High-Speed Tablet Press">
+        <div class="machine-description">
+          <h3>High-Speed Tablet Press</h3>
+          <p>This advanced machine produces thousands of perfectly formed tablets per minute, ensuring consistency and rapid production for urgent demands.</p>
+        </div>
+      </div>
+      <div class="machine-slide">
+        <img src="60267-2585525.jpg" alt="Automated Blister Packaging">
+        <div class="machine-description">
+          <h3>Automated Blister Packaging</h3>
+          <p>State-of-the-art technology for sterile and secure packaging of individual doses, significantly extending shelf life and preventing contamination.</p>
+        </div>
+      </div>
+      <div class="machine-slide">
+        <img src="FG_20Industries_20Robofiller_2072_20dpi.jpg" alt="Robotic Liquid Filling System">
+        <div class="machine-description">
+          <h3>Robotic Liquid Filling System</h3>
+          <p>Precision robotics ensures accurate and sterile filling of liquid medications into vials and bottles, minimizing human error and maximizing efficiency.</p>
+        </div>
+      </div>
+       <div class="machine-slide">
+        <img src="image-showing-a-sophisticated-AI-driven-visual-inspection-system-in-a-manufacturing-setting.jpeg" alt="AI-Powered Quality Control">
+        <div class="machine-description">
+          <h3>AI-Powered Quality Control</h3>
+          <p>Utilizing artificial intelligence, this system rapidly identifies imperfections, ensuring every product meets the highest standards of quality and safety.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="categories reveal">
+    <h2>Our Categories</h2>
+    <div class="category-list">
+      <a href="general-travel.html" class="category-link">
+        <i class="fas fa-suitcase-rolling"></i> General (Travel/Trip)
+      </a>
+      <a href="antibiotics.html" class="category-link">
+        <i class="fas fa-capsules"></i> Antibiotics
+      </a>
+      <a href="diabetes.html" class="category-link">
+        <i class="fas fa-syringe"></i> Diabetes
+      </a>
+      <a href="painkillers.html" class="category-link">
+        <i class="fas fa-pills"></i> Painkillers
+      </a>
+    </div>
+  </section>
+  <section class="nearby-stores">
+    <h2>Nearby Stores</h2>
+    <ul>
+      <li>Main Store- Patli Gali Ghar Ke Piche(Bombay)</li>
+      <li>2nd Branch- Shaitan Gali Gujrat</li>
+      <li>South America Near Dubai</li>
+      <li>Popat Ki Dukan, Mohalla Panipuri</li>
+      <li>Kale Kache WaLi Gali (Punjab)</li>
+    </ul>
+  </section>
+  <footer>
+    <p>&copy; 2025 Rocky Bhai Medical Store. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a> |
+      <a href="medicine-list.html">Price List</a> |
+      <a href="order-now.html">Order Now</a>
+    </div>
+  </footer>
+<div id="preloader"></div>
+<button id="scrollToTopBtn" title="Go to top">↑</button>
+<script>
+  window.addEventListener("load", function () {
+    const loader = document.getElementById("preloader");
+    loader.style.opacity = "0";
+    setTimeout(() => loader.style.display = "none", 500);
+  });
+
+  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+  window.onscroll = function () {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      scrollToTopBtn.style.display = "block";
+    } else {
+      scrollToTopBtn.style.display = "none";
+    }
+  };
+  scrollToTopBtn.onclick = function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const heroSlides = document.querySelectorAll('.hero-slide');
+  let currentHeroSlide = 0;
+  function showHeroSlide(index) {
+    index = index % heroSlides.length;
+    if (index < 0) {
+      index = heroSlides.length - 1;
+    }
+    heroSlides.forEach((slide) => {
+      slide.classList.remove('active');
+      slide.style.zIndex = 1;
+    });
+    heroSlides[index].classList.add('active');
+    heroSlides[index].style.zIndex = 2;
+    currentHeroSlide = index;
+  }
+  function nextHeroSlide() {
+    showHeroSlide(currentHeroSlide + 1);
+  }
+  showHeroSlide(0);
+  setInterval(nextHeroSlide, 5000);
+
+  const darkModeToggle = document.getElementById('dark-mode-toggle');
+  const body = document.body;
+
+  function setTheme(theme) {
+    if (theme === 'dark') {
+      body.classList.add('dark-mode');
+      darkModeToggle.textContent = '☀️';
+      localStorage.setItem('theme', 'dark');
+    } else {
+      body.classList.remove('dark-mode');
+      darkModeToggle.textContent = '🌙';
+      localStorage.setItem('theme', 'light');
+    }
+  }
+
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    setTheme(savedTheme);
+  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    setTheme('dark');
+  } else {
+    setTheme('light');
+  }
+
+  darkModeToggle.addEventListener('click', () => {
+    if (body.classList.contains('dark-mode')) {
+      setTheme('light');
+    } else {
+      setTheme('dark');
+    }
+  });
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+    if (!localStorage.getItem('theme')) {
+      if (event.matches) {
+        setTheme('dark');
+      } else {
+        setTheme('light');
+      }
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const alertBox = document.getElementById('developer-alert');
+    const closeBtn = alertBox.querySelector('.close-alert-btn');
+    if (localStorage.getItem('developerAlertClosed') === 'true') {
+      alertBox.style.display = 'none';
+    } else {
+      alertBox.style.opacity = '0';
+      alertBox.style.transform = 'translate(-50%, -70px)';
+      alertBox.style.display = 'flex';
+      setTimeout(() => {
+        alertBox.style.opacity = '1';
+        alertBox.style.transform = 'translate(-50%, -50%)';
+      }, 100);
+    }
+    closeBtn.addEventListener('click', function() {
+      alertBox.style.opacity = '0';
+      alertBox.style.transform = 'translate(-50%, -70px)';
+      setTimeout(() => {
+        alertBox.style.display = 'none';
+        localStorage.setItem('developerAlertClosed', 'true');
+      }, 500);
+    });
+
+    // NEW JAVASCRIPT FOR MACHINE SHOWCASE
+    const machineSlides = document.querySelectorAll('.machine-showcase .machine-slide');
+    let currentMachineSlide = 0;
+    function showMachineSlide(index) {
+      index = index % machineSlides.length;
+      if (index < 0) {
+        index = machineSlides.length - 1;
+      }
+      machineSlides.forEach((slide) => {
+        slide.classList.remove('active');
+        slide.style.zIndex = 1;
+      });
+      machineSlides[index].classList.add('active');
+      machineSlides[index].style.zIndex = 2;
+      currentMachineSlide = index;
+    }
+    function nextMachineSlide() {
+      showMachineSlide(currentMachineSlide + 1);
+    }
+    showMachineSlide(0);
+    setInterval(nextMachineSlide, 7000);
+
+    // Reveal on scroll effect
+    const revealElements = document.querySelectorAll('.reveal');
+
+    function revealOnScroll() {
+      for (let i = 0; i < revealElements.length; i++) {
+        const windowHeight = window.innerHeight;
+        const revealTop = revealElements[i].getBoundingClientRect().top;
+        const revealPoint = 150; // Adjust this value to control when the element reveals
+
+        if (revealTop < windowHeight - revealPoint) {
+          revealElements[i].classList.add('active');
+        } else {
+          // Optional: Remove 'active' class if element scrolls out of view upwards
+          // revealElements[i].classList.remove('active');
+        }
+      }
+    }
+
+    // Initial check on load
+    revealOnScroll();
+
+    // Listen for scroll events
+    window.addEventListener('scroll', revealOnScroll);
+  });
+</script>
+</body>
+</html>
