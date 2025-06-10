@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>General (Travel) - Rocky Bhai Medical Store</title>
+  <link rel="stylesheet" href="Store Style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo-link">
+        <img src="Daco_4306300.png" alt="Medical Store Logo" class="logo-img" />
+      </a>
+      <h1 class="header-title">
+        <a href="index.html" class="title-link">Rocky Bhai Medical Store</a>
+      </h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="medicine-list.html">Price List</a></li>
+        <li><a href="order-now.html">Order Now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content reveal">
+    <div class="medicine-container">
+      <h2>General (Travel) Medicines</h2>
+      <div class="medicine-grid">
+        <div class="medicine-card general-travel">
+          <h3>ORS Sachet</h3>
+          <p><strong>How it works:</strong> Rehydrates the body by replenishing fluids and electrolytes.</p>
+          <p><strong>Lethal Dosage:</strong> Generally safe; excess intake may cause imbalance.</p>
+          <p><strong>Allergic Reaction:</strong> Rare.</p>
+          <p><strong>Suitable Age:</strong> All ages but consult doctor for babies.</p>
+        </div>
+
+        <div class="medicine-card general-travel">
+          <h3>Antacid Tablets</h3>
+          <p><strong>How it works:</strong> Neutralizes stomach acid to relieve heartburn.</p>
+          <p><strong>Lethal Dosage:</strong> Excess may cause constipation or diarrhea.</p>
+          <p><strong>Allergic Reaction:</strong> Rare skin reactions.</p>
+          <p><strong>Suitable Age:</strong> Adults and children over 5 years.</p>
+        </div>
+
+        <div class="medicine-card general-travel">
+          <h3>Motion Sickness Tablets</h3>
+          <p><strong>How it works:</strong> Reduces nausea and dizziness during travel.</p>
+          <p><strong>Lethal Dosage:</strong> Overdose may cause drowsiness or confusion.</p>
+          <p><strong>Allergic Reaction:</strong> Rare.</p>
+          <p><strong>Suitable Age:</strong> Adults and children over 2 years.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Rocky Bhai Medical Store. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a> |
+      <a href="medicine-list.html">Price List</a> |
+      <a href="order-now.html">Order Now</a>
+    </div>
+  </footer>
+
+  <div id="preloader"></div>
+  <button id="scrollToTopBtn" title="Go to top">↑</button>
+
+  <script>
+    // Preloader
+    window.addEventListener("load", function () {
+      const loader = document.getElementById("preloader");
+      loader.style.opacity = "0";
+      setTimeout(() => loader.style.display = "none", 500);
+    });
+
+    // Scroll-to-top Button
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    window.onscroll = function () {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollToTopBtn.style.display = "block";
+      } else {
+        scrollToTopBtn.style.display = "none";
+      }
+    };
+    scrollToTopBtn.onclick = function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    // Scroll Reveal Animation
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(element => {
+      observer.observe(element);
+    });
+
+    // Dark Mode Toggle
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+
+    function setTheme(theme) {
+      if (theme === 'dark') {
+        body.classList.add('dark-mode');
+        darkModeToggle.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        body.classList.remove('dark-mode');
+        darkModeToggle.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+      if (body.classList.contains('dark-mode')) {
+        setTheme('light');
+      } else {
+        setTheme('dark');
+      }
+    });
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+      if (!localStorage.getItem('theme')) {
+        if (event.matches) {
+          setTheme('dark');
+        } else {
+          setTheme('light');
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Now</title>
+  <link rel="stylesheet" href="Store Style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo-link">
+        <img src="Daco_4306300.png" alt="Medical Store Logo" class="logo-img" />
+      </a>
+      <h1 class="header-title">
+        <a href="index.html" class="title-link">Rocky Bhai Medical Store</a>
+      </h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="medicine-list.html">Price List</a></li>
+        <li><a href="order-now.html">Order Now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="order-section">
+    <h2 class="section-title">Place Your Order</h2> <div class="order-container">
+      <script type="text/javascript" src="https://form.jotform.com/jsform/251594732863062"></script>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Rocky Bhai Medical Store. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a> |
+      <a href="medicine-list.html">Price List</a> |
+      <a href="order-now.html">Order Now</a>
+    </div>
+  </footer>
+
+  <div id="preloader"></div>
+
+  <button id="scrollToTopBtn" title="Go to top">↑</button>
+
+  <script>
+    window.addEventListener("load", function () {
+      const loader = document.getElementById("preloader");
+      loader.style.opacity = "0";
+      setTimeout(() => loader.style.display = "none", 500);
+    });
+
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    window.onscroll = function () {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollToTopBtn.style.display = "block";
+      } else {
+        scrollToTopBtn.style.display = "none";
+      }
+    };
+    scrollToTopBtn.onclick = function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+
+    function setTheme(theme) {
+      if (theme === 'dark') {
+        body.classList.add('dark-mode');
+        darkModeToggle.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        body.classList.remove('dark-mode');
+        darkModeToggle.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+      if (body.classList.contains('dark-mode')) {
+        setTheme('light');
+      } else {
+        setTheme('dark');
+      }
+    });
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+      if (!localStorage.getItem('theme')) {
+        if (event.matches) {
+          setTheme('dark');
+        } else {
+          setTheme('light');
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
