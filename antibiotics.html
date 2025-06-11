@@ -29,11 +29,11 @@
     </nav>
   </header>
 
-  <main class="main-content reveal">
+  <main class="main-content">
     <div class="medicine-container">
       <h2>Antibiotics</h2>
       <div class="medicine-grid">
-        <div class="medicine-card antibiotics">
+        <div class="medicine-card antibiotics reveal">
           <h3>Amoxicillin</h3>
           <p><strong>How it works:</strong> Kills bacteria by inhibiting cell wall synthesis.</p>
           <p><strong>Lethal Dosage:</strong> Overdose can cause severe diarrhea, allergic reactions.</p>
@@ -41,7 +41,7 @@
           <p><strong>Suitable Age:</strong> Adults and children; dosage varies.</p>
         </div>
 
-        <div class="medicine-card antibiotics">
+        <div class="medicine-card antibiotics reveal">
           <h3>Azithromycin</h3>
           <p><strong>How it works:</strong> Stops bacterial protein synthesis to kill bacteria.</p>
           <p><strong>Lethal Dosage:</strong> Overdose may cause heart rhythm problems.</p>
@@ -49,7 +49,7 @@
           <p><strong>Suitable Age:</strong> Adults and children; consult doctor for dosage.</p>
         </div>
 
-        <div class="medicine-card antibiotics">
+        <div class="medicine-card antibiotics reveal">
           <h3>Ciprofloxacin</h3>
           <p><strong>How it works:</strong> Kills bacteria by interfering with DNA replication.</p>
           <p><strong>Lethal Dosage:</strong> Overdose may cause seizures and tendon damage.</p>
@@ -93,13 +93,15 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-    // Scroll Reveal Animation (for .main-content in this case)
+    // Scroll Reveal Animation (for .medicine-card in this case)
     const revealElements = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
-          observer.unobserve(entry.target);
+          // observer.unobserve(entry.target);
+        } else {
+          entry.target.classList.remove('active');
         }
       });
     }, { threshold: 0.1 });

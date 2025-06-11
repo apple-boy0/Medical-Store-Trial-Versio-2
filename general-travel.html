@@ -29,11 +29,11 @@
     </nav>
   </header>
 
-  <main class="main-content reveal">
+  <main class="main-content">
     <div class="medicine-container">
       <h2>General (Travel) Medicines</h2>
       <div class="medicine-grid">
-        <div class="medicine-card general-travel">
+        <div class="medicine-card general-travel reveal">
           <h3>ORS Sachet</h3>
           <p><strong>How it works:</strong> Rehydrates the body by replenishing fluids and electrolytes.</p>
           <p><strong>Lethal Dosage:</strong> Generally safe; excess intake may cause imbalance.</p>
@@ -41,7 +41,7 @@
           <p><strong>Suitable Age:</strong> All ages but consult doctor for babies.</p>
         </div>
 
-        <div class="medicine-card general-travel">
+        <div class="medicine-card general-travel reveal">
           <h3>Antacid Tablets</h3>
           <p><strong>How it works:</strong> Neutralizes stomach acid to relieve heartburn.</p>
           <p><strong>Lethal Dosage:</strong> Excess may cause constipation or diarrhea.</p>
@@ -49,7 +49,7 @@
           <p><strong>Suitable Age:</strong> Adults and children over 5 years.</p>
         </div>
 
-        <div class="medicine-card general-travel">
+        <div class="medicine-card general-travel reveal">
           <h3>Motion Sickness Tablets</h3>
           <p><strong>How it works:</strong> Reduces nausea and dizziness during travel.</p>
           <p><strong>Lethal Dosage:</strong> Overdose may cause drowsiness or confusion.</p>
@@ -99,10 +99,14 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
-          observer.unobserve(entry.target);
+          // No need to unobserve if we want the effect to trigger again on scroll back up
+          // observer.unobserve(entry.target);
+        } else {
+          // Optional: Remove 'active' class if element scrolls out of view upwards
+          entry.target.classList.remove('active');
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.1 }); // Adjusted threshold for better reveal timing
 
     revealElements.forEach(element => {
       observer.observe(element);

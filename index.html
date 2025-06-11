@@ -100,7 +100,7 @@
       </a>
     </div>
   </section>
-  <section class="nearby-stores">
+  <section class="nearby-stores reveal">
     <h2>Nearby Stores</h2>
     <ul>
       <li>Main Store- Patli Gali Ghar Ke Piche(Bombay)</li>
@@ -225,7 +225,6 @@
       }, 500);
     });
 
-    // NEW JAVASCRIPT FOR MACHINE SHOWCASE
     const machineSlides = document.querySelectorAll('.machine-showcase .machine-slide');
     let currentMachineSlide = 0;
     function showMachineSlide(index) {
@@ -247,29 +246,33 @@
     showMachineSlide(0);
     setInterval(nextMachineSlide, 7000);
 
-    // Reveal on scroll effect
     const revealElements = document.querySelectorAll('.reveal');
 
     function revealOnScroll() {
       for (let i = 0; i < revealElements.length; i++) {
         const windowHeight = window.innerHeight;
         const revealTop = revealElements[i].getBoundingClientRect().top;
-        const revealPoint = 150; // Adjust this value to control when the element reveals
+        const revealPoint = 150;
 
         if (revealTop < windowHeight - revealPoint) {
           revealElements[i].classList.add('active');
         } else {
-          // Optional: Remove 'active' class if element scrolls out of view upwards
-          // revealElements[i].classList.remove('active');
         }
       }
     }
 
-    // Initial check on load
     revealOnScroll();
 
-    // Listen for scroll events
     window.addEventListener('scroll', revealOnScroll);
+
+    const navLinks = document.querySelectorAll('.nav-links li a');
+    const currentPath = window.location.pathname.split('/').pop();
+
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === currentPath) {
+        link.classList.add('active-link');
+      }
+    });
   });
 </script>
 </body>

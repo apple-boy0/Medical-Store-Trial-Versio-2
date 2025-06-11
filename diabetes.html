@@ -29,11 +29,11 @@
     </nav>
   </header>
 
-  <main class="main-content reveal">
+  <main class="main-content">
     <div class="medicine-container">
       <h2>Diabetes Medicines</h2>
       <div class="medicine-grid">
-        <div class="medicine-card diabetes">
+        <div class="medicine-card diabetes reveal">
           <h3>Metformin</h3>
           <p><strong>How it works:</strong> Lowers glucose production in the liver and improves insulin sensitivity.</p>
           <p><strong>Lethal Dosage:</strong> High doses can cause lactic acidosis (rare but serious).</p>
@@ -41,7 +41,7 @@
           <p><strong>Suitable Age:</strong> Adults, not recommended for babies or toddlers.</p>
         </div>
 
-        <div class="medicine-card diabetes">
+        <div class="medicine-card diabetes reveal">
           <h3>Glipizide</h3>
           <p><strong>How it works:</strong> Stimulates the pancreas to release more insulin.</p>
           <p><strong>Lethal Dosage:</strong> Overdose can cause severe hypoglycemia.</p>
@@ -49,7 +49,7 @@
           <p><strong>Suitable Age:</strong> Adults and children over 10 years; not for infants.</p>
         </div>
 
-        <div class="medicine-card diabetes">
+        <div class="medicine-card diabetes reveal">
           <h3>Insulin Injection</h3>
           <p><strong>How it works:</strong> Replaces or supplements natural insulin in the body.</p>
           <p><strong>Lethal Dosage:</strong> Excess insulin can cause severe hypoglycemia.</p>
@@ -99,7 +99,9 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
-          observer.unobserve(entry.target);
+          // observer.unobserve(entry.target);
+        } else {
+          entry.target.classList.remove('active');
         }
       });
     }, { threshold: 0.1 });

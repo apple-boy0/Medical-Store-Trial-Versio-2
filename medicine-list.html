@@ -13,7 +13,6 @@
 
   <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
 
-  <!-- Header Navigation -->
   <header>
     <nav class="navbar">
       <a href="index.html" class="logo-link">
@@ -30,7 +29,6 @@
     </nav>
   </header>
 
-  <!-- Main Content: Price List Table -->
   <main class="main-content reveal">
     <div class="price-list-container">
       <h2 class="section-title">Current Price List</h2>
@@ -149,7 +147,6 @@
     </div>
   </main>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Rocky Bhai Medical Store. All rights reserved.</p>
     <div class="footer-links">
@@ -163,14 +160,12 @@
   <button id="scrollToTopBtn" title="Go to top">↑</button>
 
   <script>
-    // Preloader
     window.addEventListener("load", function () {
       const loader = document.getElementById("preloader");
       loader.style.opacity = "0";
       setTimeout(() => loader.style.display = "none", 500);
     });
 
-    // Scroll-to-top Button
     const scrollToTopBtn = document.getElementById("scrollToTopBtn");
     window.onscroll = function () {
       if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
@@ -183,7 +178,6 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-    // Scroll Reveal Animation (for .main-content and other .reveal elements)
     const revealElements = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -198,7 +192,6 @@
       observer.observe(element);
     });
 
-    // Dark Mode Toggle
     const darkModeToggle = document.getElementById('dark-mode-toggle');
     const body = document.body;
 
@@ -240,6 +233,17 @@
           setTheme('light');
         }
       }
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('.nav-links li a');
+      const currentPath = window.location.pathname.split('/').pop();
+
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+          link.classList.add('active-link');
+        }
+      });
     });
   </script>
 

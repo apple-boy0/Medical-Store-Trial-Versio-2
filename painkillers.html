@@ -29,11 +29,11 @@
     </nav>
   </header>
 
-  <main class="main-content reveal">
+  <main class="main-content">
     <div class="medicine-container">
       <h2>Painkillers</h2>
       <div class="medicine-grid">
-        <div class="medicine-card painkiller">
+        <div class="medicine-card painkiller reveal">
           <h3>Paracetamol</h3>
           <p><strong>How it works:</strong> Reduces fever and relieves mild to moderate pain.</p>
           <p><strong>Lethal Dosage:</strong> Overdose can cause liver damage.</p>
@@ -41,7 +41,7 @@
           <p><strong>Suitable Age:</strong> Adults and children above 2 years; avoid in infants without advice.</p>
         </div>
 
-        <div class="medicine-card painkiller">
+        <div class="medicine-card painkiller reveal">
           <h3>Ibuprofen</h3>
           <p><strong>How it works:</strong> Non-steroidal anti-inflammatory drug (NSAID), reduces pain, fever, and inflammation.</p>
           <p><strong>Lethal Dosage:</strong> High doses may cause stomach bleeding or kidney damage.</p>
@@ -49,7 +49,7 @@
           <p><strong>Suitable Age:</strong> Adults and children above 6 months.</p>
         </div>
 
-        <div class="medicine-card painkiller">
+        <div class="medicine-card painkiller reveal">
           <h3>Aspirin</h3>
           <p><strong>How it works:</strong> NSAID, reduces pain, fever, inflammation and thins blood.</p>
           <p><strong>Lethal Dosage:</strong> Excessive doses can cause stomach bleeding and toxicity.</p>
@@ -99,7 +99,9 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
-          observer.unobserve(entry.target);
+          // observer.unobserve(entry.target);
+        } else {
+          entry.target.classList.remove('active');
         }
       });
     }, { threshold: 0.1 });
